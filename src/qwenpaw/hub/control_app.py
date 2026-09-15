@@ -8,6 +8,7 @@ import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, AsyncIterator
+from urllib.parse import unquote
 
 import httpx
 import uvicorn
@@ -240,6 +241,24 @@ def create_hub_app(  # pylint: disable=too-many-statements
         if user is None:
             raise HTTPException(status_code=401, detail="Not authenticated")
         return user
+
+    def require_personal_runtime_user(
+        path: str,
+        request: Request,
+        authorization: str | None = Header(default=None),
+    ) -> HubUser:
+        # Match decoding by the Runtime ASGI server and file preview router.
+        normalized_path = unquote(unquote(path)).replace("\\", "/")
+        # Native file previews cannot attach an Authorization header.
+        if (
+            authorization is None
+            and request.method in {"GET", "HEAD"}
+            and path.startswith("files/preview/")
+            and not {".", ".."}.intersection(normalized_path.split("/"))
+        ):
+            token = request.query_params.get("token", "")
+            authorization = f"Bearer {token}"
+        return require_user(authorization)
 
     def require_admin(user: HubUser = Depends(require_user)) -> HubUser:
         if not user.is_admin:
@@ -1260,7 +1279,7 @@ def create_hub_app(  # pylint: disable=too-many-statements
     async def personal_runtime_proxy(
         path: str,
         request: Request,
-        user: HubUser = Depends(require_user),
+        user: HubUser = Depends(require_personal_runtime_user),
     ) -> Response:
         record = await ensure_personal_runtime(user)
         target = runtime_url(
