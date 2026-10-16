@@ -127,7 +127,7 @@ export function WebSearchConfigModal({
   const canSubmit =
     loadState.status === "ready" && loadState.provider === providerValue;
 
-  const { schedule, flush } = useAutoSave(async () => {
+  const { schedule, discard, requestClose } = useAutoSave(async () => {
     if (!canSubmit) return false;
     const values = form.getFieldsValue(true);
     try {
@@ -159,12 +159,11 @@ export function WebSearchConfigModal({
         // Unsafe to save while loading/error or when the loaded slot
         // does not match the selected provider — discard and close.
         if (!canSubmit) {
+          discard();
           onClose();
           return;
         }
-        void flush().then((saved) => {
-          if (saved) onClose();
-        });
+        void requestClose(onClose);
       }}
       footer={null}
     >
