@@ -1923,6 +1923,8 @@
     "webSearchApiKeyLabel": "Khóa API (tùy chọn)",
     "webSearchQuotaHintBefore": "Miễn phí 100 lần gọi/ngày. Đăng ký tại ",
     "webSearchQuotaHintAfter": " để nhận 1.000 lần/ngày.",
+    "webSearchTavilyKeyHintBefore": "Tùy chọn. Nếu chưa cấu hình hoặc xác thực thất bại, sẽ dùng tìm kiếm miễn phí. Lấy khóa tại ",
+    "webSearchTavilyKeyHintAfter": ".",
     "active": "đang hoạt động",
     "available": "Có sẵn",
     "noEnabled": "Không có công cụ nào được bật",
@@ -2078,7 +2080,8 @@
       "runtime": "Thực thi và tự động hóa",
       "migration": "Di chuyển ứng dụng",
       "other": "Chưa phân loại"
-    }
+    },
+    "webSearchConfigLoadError": "Không tải được thông tin xác thực của nhà cung cấp này. Thử lại trước khi lưu."
   },
   "mcp": {
     "title": "MCP Client",

@@ -3181,6 +3181,8 @@
     "webSearchApiKeyLabel": "Chave de API (opcional)",
     "webSearchQuotaHintBefore": "Grátis: 100 chamadas/dia. Registre-se em ",
     "webSearchQuotaHintAfter": " para 1.000/dia.",
+    "webSearchTavilyKeyHintBefore": "Opcional. Se não configurado ou se a autenticação falhar, a busca gratuita será usada. Obtenha uma chave em ",
+    "webSearchTavilyKeyHintAfter": ".",
     "active": "ativo(s)",
     "available": "Disponível",
     "noEnabled": "Nenhuma ferramenta ativada",
@@ -3336,7 +3338,8 @@
       "runtime": "Execução e automação",
       "migration": "Migração de aplicativos",
       "other": "Sem categoria"
-    }
+    },
+    "webSearchConfigLoadError": "Falha ao carregar as credenciais deste provedor. Tente novamente antes de salvar."
   },
   "modelConfig": {
     "promptTitle": "LLM Model Required — Select in Chat After Configuration",
