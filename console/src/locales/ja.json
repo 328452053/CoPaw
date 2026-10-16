@@ -1859,6 +1859,7 @@
     "retry": "再試行"
   },
   "modelSelector": {
+    "noFallback": "使用しない",
     "selectModel": "モデルを選択",
     "noConfiguredModels": "設定済みモデルがありません",
     "noFreeModels": "利用可能な無料モデルがありません",
@@ -1893,6 +1894,10 @@
     "searchCandidates": "Search candidate models..."
   },
   "models": {
+    "modelType": "モデルタイプ",
+    "modelTypeChat": "チャット",
+    "modelTypeDecision": "判定",
+    "decisionModelHint": "今後の自動化機能向けに判定モデルを設定します。チャットには使用できません。",
     "discoveryOriginApi": "API 検出",
     "discoveryOriginCatalog": "公式カタログ",
     "discoveryOriginBoth": "API + カタログ",
@@ -1908,6 +1913,9 @@
     "providersTitle": "プロバイダー",
     "providersDescription": "各プロバイダーのAPIキーとエンドポイントを設定します。",
     "llmTitle": "モデル",
+    "defaultModels": "デフォルトモデル",
+    "defaultChatModel": "チャットモデル",
+    "defaultDecisionModel": "判定モデル",
     "defaultLlm": "デフォルト LLM",
     "llmDescription": "ここではグローバル既定の LLM モデルを設定します。Chat ページでは各 Agent ごとに使用するモデルを個別に選択できます。",
     "configureProvider": "{{name}} を設定",

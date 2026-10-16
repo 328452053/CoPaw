@@ -2438,6 +2438,7 @@
     "configuredModels": "Configured models",
     "freeModelsOnly": "Free models only",
     "chooseFallback": "Backup model",
+    "noFallback": "None",
     "moveFallbackUp": "Move {{model}} up",
     "moveFallbackDown": "Move {{model}} down",
     "removeFallback": "Remove {{model}}",
@@ -2528,6 +2529,10 @@
     "retry": "Retry"
   },
   "models": {
+    "modelType": "Model type",
+    "modelTypeChat": "Chat",
+    "modelTypeDecision": "Decision",
+    "decisionModelHint": "Decision models are configured here for future automation features and cannot be used for chat.",
     "connectProviderTitle": "Connect your first model",
     "cardStatus": {
       "configured": "Configured",
@@ -2552,6 +2557,9 @@
     "providersTitle": "Providers",
     "providersDescription": "Configure API keys and endpoints for each provider.",
     "llmTitle": "Models",
+    "defaultModels": "Default models",
+    "defaultChatModel": "Chat model",
+    "defaultDecisionModel": "Decision model",
     "defaultLlm": "Default LLM",
     "notConfiguredYet": "Not configured",
     "llmDescription": "Set the global default LLM model from an authorized provider. You can choose a specific model for each Agent in the Chat page.",
@@ -4021,6 +4029,10 @@
     "system": "System"
   },
   "chat": {
+    "sessionSettings": {
+      "advanced": "Advanced options",
+      "decisionEnabled": "Use decision model"
+    },
     "longTextPaste": {
       "title": "Paste long text",
       "asText": "Paste as text",
